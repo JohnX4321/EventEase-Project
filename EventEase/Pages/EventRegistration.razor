@@ -1,0 +1,59 @@
+@page "/register/{Id:int}"
+@using EventEase.Models
+@inject EventEase.Services.EventService EventService
+@inject EventEase.Services.UserSessionService SessionService
+
+<h2>Register</h2>
+
+@if (evt is null) { <p>Event not found.</p> }
+else
+{
+    <h3>Register for @evt.Name</h3>
+    <p><strong>Date:</strong> @evt.Date.ToString("yyyy-MM-dd")</p>
+    <p><strong>Location:</strong> @evt.Location</p>
+
+    <EditForm Model="registration" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div>
+            <label>Name: <InputText @bind-Value="registration.Name" /></label>
+        </div>
+        <div>
+            <label>Email: <InputText @bind-Value="registration.Email" /></label>
+        </div>
+        <button type="submit">Register</button>
+    </EditForm>
+
+    @if (registered)
+    {
+        <p>Thanks, @registration.Name! Registration submitted.</p>
+    }
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Event? evt;
+    private Registration registration = new();
+    private bool registered = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        evt = EventService.GetById(Id);
+        await SessionService.LoadAsync();
+        if (SessionService.CurrentUser != null)
+        {
+            // prefill
+            registration.Name = SessionService.CurrentUser.Name;
+            registration.Email = SessionService.CurrentUser.Email;
+        }
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (evt is null) return;
+        EventService.RegisterAttendee(evt.Id, registration);
+        await SessionService.SaveAsync(registration);
+        registered = true;
+    }
+}

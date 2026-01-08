@@ -1,0 +1,32 @@
+@using EventEase.Models
+@inject EventEase.Services.EventService EventService
+
+<div class="event-card">
+    <h3>@(Event?.Name ?? "")</h3>
+    <p><strong>Date:</strong> @(Event is null ? string.Empty : Event.Date.ToString("yyyy-MM-dd"))</p>
+    <p><strong>Location:</strong> @(Event?.Location ?? string.Empty)</p>
+
+    <div class="edit">
+        <label>Name: <input @bind="Event.Name" /></label>
+        <label>Date: <InputDate @bind-Value="Event.Date" /></label>
+        <label>Location: <input @bind="Event.Location" /></label>
+    </div>
+
+    @* show attendee count *@
+    @if (Event != null)
+    {
+        var count = EventService?.GetAttendees(Event.Id).Count() ?? 0;
+        <p><strong>Attendees:</strong> @count</p>
+    }
+
+    <a href="@($"/details/{Event?.Id}")">Details</a> |
+    <a href="@($"/register/{Event?.Id}")">Register</a> |
+    <a href="@($"/attendance/{Event?.Id}")">Attendees</a>
+</div>
+
+@code {
+    [Parameter]
+    public Event Event { get; set; } = new Event();
+
+    
+}

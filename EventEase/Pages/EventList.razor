@@ -1,0 +1,23 @@
+@page "/"
+@using EventEase.Models
+@inject EventEase.Services.EventService EventService
+
+<h1>Events</h1>
+
+@if (events is null) { <p>Loading...</p> }
+else
+{
+    foreach (var ev in events)
+    {
+        <EventCard Event="ev" />
+    }
+}
+
+@code {
+    private IEnumerable<Event>? events;
+
+    protected override void OnInitialized()
+    {
+        events = EventService.GetAll();
+    }
+}

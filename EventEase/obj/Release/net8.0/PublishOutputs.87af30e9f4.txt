@@ -1,0 +1,2 @@
+/Users/samarthms/Documents/BlazorFE/EventEase/publish/emcc-props.json
+/Users/samarthms/Documents/BlazorFE/EventEase/publish/web.config

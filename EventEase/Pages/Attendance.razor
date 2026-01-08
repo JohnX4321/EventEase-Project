@@ -1,0 +1,35 @@
+@page "/attendance/{Id:int}"
+@using EventEase.Models
+@inject EventEase.Services.EventService EventService
+
+<h2>Attendance</h2>
+
+@if (evt is null) { <p>Event not found.</p> }
+else
+{
+    <h3>Attendees for @evt.Name</h3>
+    var attendees = EventService.GetAttendees(evt.Id);
+    if (!attendees.Any())
+    {
+        <p>No registrations yet.</p>
+    }
+    else
+    {
+        <ul>
+            @foreach (var a in attendees)
+            {
+                <li>@a.Name (@a.Email) - @a.RegisteredAt.ToLocalTime().ToString("g")</li>
+            }
+        </ul>
+    }
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Event? evt;
+
+    protected override void OnInitialized()
+    {
+        evt = EventService.GetById(Id);
+    }
+}

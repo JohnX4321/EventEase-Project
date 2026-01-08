@@ -1,0 +1,63 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = EventEase
+build_property.RootNamespace = EventEase
+build_property.ProjectDir = /Users/samarthms/Documents/BlazorFE/EventEase/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/samarthms/Documents/BlazorFE/EventEase
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[/Users/samarthms/Documents/BlazorFE/EventEase/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/samarthms/Documents/BlazorFE/EventEase/Pages/Attendance.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXR0ZW5kYW5jZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/samarthms/Documents/BlazorFE/EventEase/Pages/EventDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnREZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/samarthms/Documents/BlazorFE/EventEase/Pages/EventList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnRMaXN0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/samarthms/Documents/BlazorFE/EventEase/Pages/EventRegistration.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnRSZWdpc3RyYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/samarthms/Documents/BlazorFE/EventEase/Shared/EventCard.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL0V2ZW50Q2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/samarthms/Documents/BlazorFE/EventEase/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL01haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/samarthms/Documents/BlazorFE/EventEase/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkL05hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/samarthms/Documents/BlazorFE/EventEase/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
