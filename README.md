@@ -1,4 +1,4 @@
-# EventEase (Blazor) - Phase 1
+# EventEase (Blazor) 
 
 Scaffolded a minimal Blazor WebAssembly app with:
 - `Event` model
